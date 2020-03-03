@@ -1,20 +1,18 @@
 # pylint: disable=no-member
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
-from django_countries.fields import CountryField
-from djmoney.models.fields import MoneyField
 from django.contrib.auth import get_user_model
 User = get_user_model()
 
 # Create your models here.
 class Trip(models.Model):
-    country = CountryField(blank_label='(select country)')
+    country = models.CharField(max_length=150)
     local_area = models.CharField(max_length=80)
     postcode = models.CharField(max_length=80)
     description = models.TextField(max_length=600)
-    image = models.CharField(max_length=80)
+    image = models.CharField(max_length=200)
     rating = models.PositiveSmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
-    cost = MoneyField(max_digits=19, decimal_places=2, default_currency='USD')
+    cost = models.PositiveIntegerField()
     start_date = models.DateField()
     end_date = models.DateField()
     user = models.ForeignKey(User, related_name='trips', on_delete=models.CASCADE)

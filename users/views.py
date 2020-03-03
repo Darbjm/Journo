@@ -17,6 +17,7 @@ class RegisterView(APIView):
         if serialized_user.is_valid():
             serialized_user.save()
             return Response({'message': 'Registration Succesful'})
+        print(serialized_user.errors)
         return Response(serialized_user.errors, status=HTTP_422_UNPROCESSABLE_ENTITY)
 class Login(APIView):
     def post(self, request):

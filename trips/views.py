@@ -21,10 +21,8 @@ class MakeTripView(APIView):
     permission_classes = (IsAuthenticated, )
 
     def post(self, request):
-      print(request)
-      print('WORKING')
+      print(request.data)
       trip = TripSerializer(data=request.data)
-      print('WORKING')
       if trip.is_valid():
         trip.save()
         return Response(trip.data, status=HTTP_201_CREATED)
