@@ -1,6 +1,5 @@
 import React from 'react'
 import axios from 'axios'
-import Auth from '../../lib/auth'
 
 class ImageUpload extends React.Component {
   state = {
@@ -10,6 +9,7 @@ class ImageUpload extends React.Component {
 
   async componentDidMount() {
     const image = this.props.value
+    console.log(this.props)
     this.setState({ image })
   }
 
@@ -31,7 +31,7 @@ class ImageUpload extends React.Component {
       <div className="is-row image-input">
         {image &&    
           <div>
-            <img src={image} className="upload-image"/>
+            <img src={image} alt={image} className="upload-image"/>
           </div>}
             <label className={labelClass}>{this.props.labelText}</label>
             <input

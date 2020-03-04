@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 class Home extends React.Component {
   state = {
@@ -16,7 +16,7 @@ class Home extends React.Component {
     try {
       const res = await axios.get('api/trips/')
       const array = res.data
-      this.setState({ recent: array.slice(-2) })
+      this.setState({ recent: array.slice(-5) })
     } catch (err) {
       console.log(err)
     }
@@ -35,7 +35,6 @@ class Home extends React.Component {
   render() {
     const { recent } = this.state
     return (
-      <>
         <div className="hero-body">
           <div className="home-section">
           <section className="search-section">
@@ -47,23 +46,29 @@ class Home extends React.Component {
               </button>
             </div>
           </form>
-          </section>
-          <div className='recenttext'><h1>Recent Trips:</h1></div>
-          <section className="search-section">
-            <div className="recent-section">
-              {recent && recent.map(trip => (
-                <div key={trip.id} className="recent-card">
-                  <h1>{trip.country}</h1>
-                  <h2>{trip.local_area}</h2>
-                  <img src={trip.image} className="tripimage" />
-                  <h4>{trip.cost}</h4>
+            <div className="tile is-ancestor">
+              <div className="tile is-vertical">
+                <div className="tile">
+                  <div className="tile centered">
+                    <div className="flex">
+                      {recent && recent.map(trip => (
+                      <Link to={`/showtrip/${trip.id}/`} key={trip.id} className="card">
+                        <img className="tripimage" src={trip.image} alt={trip.image} />
+                        <div className="text-card">
+                          <h1>{trip.country}</h1>
+                          <h2>{trip.local_area}</h2>
+                          <h3>£{trip.cost}</h3>
+                          <h4>Rating: {trip.rating} ★</h4>
+                        </div>
+                      </Link>))}
+                    </div>
                   </div>
-              ))}
-            </div>
+                </div>
+              </div>
+              </div>
           </section>
           </div>
         </div>
-      </>
     )
   }
 }

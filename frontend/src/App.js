@@ -15,6 +15,8 @@ import ShowTrip from './components/trips/Showtrip'
 import FailedPage from './components/common/Failedpage'
 import EditProfile from './components/users/Editprofile'
 import EditTrip from './components/trips/Edittrip';
+import ShowUser from './components/users/Showuser';
+
 
 function App() {
   return (
@@ -24,9 +26,10 @@ function App() {
       <Switch>
       <SecureRoute path="/profile/:id/edit" component={EditProfile} />
       <SecureRoute path="/showtrip/:id/edit" component={EditTrip} />
+      <SecureRoute path="/profile" component={UserProfile}/>
+      <SecureRoute path="/showuser/:id" component={ShowUser} />
       <Route path="/login" component={Login}/>
       <Route path="/register" component={Register}/>
-      <SecureRoute path="/profile/:id" component={UserProfile}/>
       <Route path='/home' component={Home} />
       <Route path='/map/:place' component={TripMap} />
       <SecureRoute path="/createtrip" component={CreateTrip}/>

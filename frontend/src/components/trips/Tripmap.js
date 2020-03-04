@@ -129,6 +129,8 @@ class TripMap extends React.Component {
             <Link to={`/showtrip/${tripPicked.id}`}>
               {tripPicked.local_area}
               <br />
+              {tripPicked.Length}
+              <br />
               £{tripPicked.cost}
               <h3>{tripPicked.rating} <span className="star">★</span></h3>
             </Link>

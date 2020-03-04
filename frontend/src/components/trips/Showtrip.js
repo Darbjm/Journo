@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 class ShowTrip extends React.Component{
 state = {
-  trip: []
+  trip: {}
 }
 
 componentDidMount = async () => {
@@ -21,32 +21,62 @@ componentDidMount = async () => {
 }
 
 isowner() {
+  console.log(Auth.getUser(), this.state.trip.user.id)
   if(Auth.getUser() === this.state.trip.user.id) {
   return true
   }
 }
 
 render() {
-  const { trip } = this.state
   const id = this.props.match.params.id
+  const { trip } = this.state
+  if (!trip.user) return null
+  console.log(trip)
   return (
-    <section>
-      <div>
-        {trip.country &&
-          <div key={trip.id} className="show-trip">
-          <h1>{trip.country}</h1>
-          <h1>{trip.local_area}</h1>
-          <h2>{trip.user.username}</h2>
-          <img src={trip.image} />
-          <h3>{trip.rating}</h3>
-          <h3>{trip.cost}</h3>
-          <h4>{trip.start_date} - {trip.end_date}</h4>
-          <p>{trip.description}</p>
-          {this.isowner() && <Link to={`/showtrip/${id}/edit`} className="button is-rounded color">Edit</Link>}
+    <section className="section hero-profile">
+        <div className="profile-fit">
+        <div className="tile is-ancestor">
+          <div className="tile is-vertical">
+            <div className="tile">
+              <img className="user-profileimage" src={trip.image} alt={trip.image} />
+              <div className="tile end">
+                <div className="flex">
+                <Link to={`/showuser/${trip.user.id}/`} key={trip.user.id} className="card">
+                <img className="tripimage" src={trip.user.image} alt={trip.user.image} />
+                <div className="text-card">
+                <p>Creator: <strong>{trip.user.username}</strong></p>
+                <h2>{trip.user.email}</h2>
+                </div>
+                </Link>
+            </div>
           </div>
-        }
-      </div>
-    </section>
+          </div>
+            <div className="tile">
+              <div className="tile is-child box">
+                <article className="media">
+                  <div className="media-content">
+                    <div className="content">
+                      <p>
+                        <strong>{trip.country}</strong> · <strong>{trip.local_area}</strong> · <small>£{trip.cost}</small> · <small>{trip.Length}</small>  · <small>Rating: {trip.rating}★</small>
+                        <br />
+                        <strong>Date: </strong><small>{trip.start_date}</small> ---  <small>{trip.end_date}</small>
+                        <br />
+                        {trip.description}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="center">
+                  <div className="media-right">
+                  {this.isowner() && <Link className="button is-rounded color" to={`/showtrip/${id}/edit`}>Edit</Link>}
+                  </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
   )
 }
 

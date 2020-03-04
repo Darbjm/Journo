@@ -2,21 +2,17 @@ import React from 'react'
 import axios from 'axios'
 import Auth from '../../lib/auth'
 import { Link } from 'react-router-dom'
-
-class UserProfile extends React.Component {
+class ShowUser extends React.Component {
   state = {
     user: {}
   }
 
   async componentDidMount() {
-    const id = Auth.getUser()
+    const id = this.props.match.params.id
     try {
       const res = await axios.get(`/api/users/show/${id}`, {
         headers: { Authorization: `Bearer ${Auth.getToken()}` }
       })
-      const plc = res.data.trips
-      const lastThree = [plc[plc.length - 1], plc[plc.length - 2], plc[plc.length - 3]]
-      console.log(lastThree)
       this.setState({ user: res.data })
     } catch (err) {
       console.log(err)
@@ -27,7 +23,6 @@ class UserProfile extends React.Component {
   render() {
     const { user } = this.state
     if (!user) return null
-    console.log(user)
     return (
       <section className="section hero-profile">
         <div className="profile-fit">
@@ -43,6 +38,7 @@ class UserProfile extends React.Component {
                 <div className="text-card">
                 <h1>{trip.country}</h1>
                 <h2>{trip.local_area}</h2>
+                <h3>{trip.Length}</h3>
                 <h3>£{trip.cost}</h3>
                 <h4>Rating: {trip.rating} ★</h4>
                 </div>
@@ -64,7 +60,6 @@ class UserProfile extends React.Component {
                   </div>
                   <div className="center">
                   <div className="media-right">
-                  <Link className="button is-rounded color" to={`/profile/${Auth.getUser()}/edit`}>Edit</Link>
                   </div>
                   </div>
                 </article>
@@ -78,4 +73,4 @@ class UserProfile extends React.Component {
   }
 }
 
-export default UserProfile
+export default ShowUser
