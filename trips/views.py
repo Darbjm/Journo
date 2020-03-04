@@ -8,12 +8,24 @@ from .models import Trip, Comment
 from .serializers import TripSerializer, PopulatedTripSerializer, CommentSerializer
 # Create your views here.
 
+class ImportEditTripListView(APIView):
+
+    permission_classes = (IsAuthenticated, )
+
+    def get(self, _request, pk):
+
+      try:
+        trip = Trip.objects.get(pk=pk)
+        serializer = TripSerializer(trip, many=False)
+        return Response(serializer.data)
+      except Trip.DoesNotExist:
+        return Response({'message': 'Not Found'}, status=HTTP_404_NOT_FOUND)
+
 class TripListView(APIView):
 
     def get(self, request):
       trips = Trip.objects.all()
       serializer = PopulatedTripSerializer(trips, many=True)
-      print(serializer)
       return Response(serializer.data)
 
 class MakeTripView(APIView):
@@ -21,7 +33,6 @@ class MakeTripView(APIView):
     permission_classes = (IsAuthenticated, )
 
     def post(self, request):
-      print(request.data)
       trip = TripSerializer(data=request.data)
       if trip.is_valid():
         trip.save()
@@ -49,6 +60,7 @@ class TripDetailView(APIView):
       if updated_trip.is_valid():
         updated_trip.save()
         return Response(updated_trip.data, status=HTTP_202_ACCEPTED)
+      print(updated_trip.errors)
       return Response(updated_trip.errors, status=HTTP_422_UNPROCESSABLE_ENTITY)
     except Trip.DoesNotExist:
       return Response({'message': 'Not Found'}, status=HTTP_404_NOT_FOUND)

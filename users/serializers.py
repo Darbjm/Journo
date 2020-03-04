@@ -40,4 +40,4 @@ class NestedUserSerializer(serializers.ModelSerializer):
     trips = TripSerializer(many=True, required=False)
     class Meta:
         model = User
-        fields = ('id', 'username', 'email', 'image', 'trips')
+        fields = ('id', 'username', 'email', 'image', 'trips', 'bio')

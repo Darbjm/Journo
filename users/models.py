@@ -6,6 +6,7 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
     email = models.CharField(max_length=50)
     image = models.CharField(max_length=200)
+    bio = models.TextField(max_length=800)
 
     def __str__(self):
         return f'{self.id} - {self.username} - {self.email}'

@@ -35,6 +35,8 @@ class Login(APIView):
 
 class UserDetailView(APIView):
 
+  permission_classes = (IsAuthenticated, )
+
   def get(self, _request, pk):
 
     try:

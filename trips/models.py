@@ -15,6 +15,7 @@ class Trip(models.Model):
     cost = models.PositiveIntegerField()
     start_date = models.DateField()
     end_date = models.DateField()
+    Length = models.CharField(max_length=100)
     user = models.ForeignKey(User, related_name='trips', on_delete=models.CASCADE)
     
 

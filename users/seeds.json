@@ -1,0 +1,82 @@
+[
+{
+  "model": "users.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$180000$01AGAx6HdtUo$oCjH2WYXoANz5+xEK6JzdeGQUx7b26BCM1GhoH0jnEA=",
+    "last_login": "2020-02-28T11:25:03Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-02-27T21:11:23Z",
+    "email": "admin@email",
+    "image": "https://res.cloudinary.com/dkb9vu8mh/image/upload/v1582735034/Users/DSC_0162_jkqoba.jpg",
+    "bio": "2020-03-03 21:17:16.710842+00:00",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$180000$3IwODKCWV8rI$ggsBZkPGTDKeFF7PyVH382VrK7sVl5AWdWoGoXDkWqY=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Jimbo",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-02-28T13:08:24Z",
+    "email": "james@email",
+    "image": "https://res.cloudinary.com/dkb9vu8mh/image/upload/v1582735034/Users/DSC_0162_jkqoba.jpg",
+    "bio": "Shameless use of a nephew for my profile. Kenya, India, Nepal, Thailand, Japan, USA, France, Spain, Netherlands, Germany, Italy, Zimbabwe, Sri Lanka, Burma, Cambodia, Vietnam, Switzerland, Canada, Croatia, Greece, Ireland, and the UK. Not stopping there!",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$180000$NZaphWpDyvMb$TckGztTBsxWcAed8WmtLNpxnYhHfyvJEGOgisiPyfPI=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Ella",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-03-03T11:52:31Z",
+    "email": "ella@email",
+    "image": "http://res.cloudinary.com/dkb9vu8mh/image/upload/v1583236326/Travel%20images/pka4fmsxyczbl0fkmyhn.jpg",
+    "bio": "My name is Ella Burne and I am a 20-something Australian born registered midwife in the midst of a never-ending love affair with solo world travel. With a passion for exploring the planet and bringing new lives into the world, I spend half my life catching babies and the other half globe trotting.",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$180000$KCU3QqT9GxGf$ukRtABoLwVfVqLYTmYkNL9f+SUhqP9Up4PFtBBkyN2U=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Millie",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-03-03T21:11:42Z",
+    "email": "millie@email",
+    "image": "http://res.cloudinary.com/dkb9vu8mh/image/upload/v1583269897/Travel%20images/kvyurx8csthylklbsea7.jpg",
+    "bio": "Millie is a Canadian doll. She has no filter and is such a warm-hearted individual. \r\n\r\nYOU MUST catch her on Snapchat or Youtube. She's either hitchhiking through SE Asia or sharing her travel shenanigans.\r\n\r\nShe\u2019s such a talented individual and has truly proven that hard work pays off. \r\n\r\nMelissa has been published on Huffington Post, Matador Network, Thought Catalog and much, much more. She\u2019s a true female backpacker and an inspiration!",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
