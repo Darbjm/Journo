@@ -49,5 +49,124 @@
     "Length": "2 Months",
     "user": 10
   }
+},
+{
+  "model": "trips.trip",
+  "pk": 10,
+  "fields": {
+    "country": "Austrailia",
+    "local_area": "Sydney",
+    "postcode": "2017",
+    "description": "Sydney, capital of New South Wales and one of Australia's largest cities, is best known for its harbourfront Sydney Opera House, with a distinctive sail-like design. Massive Darling Harbour and the smaller Circular Quay port are hubs of waterside life, with the arched Harbour Bridge and esteemed Royal Botanic Garden nearby. Sydney Tower\u2019s outdoor platform, the Skywalk, offers 360-degree views of the city and suburbs.",
+    "image": "https://lp-cms-production.imgix.net/2019-06/65830387.jpg?fit=crop&q=40&sharp=10&vib=20&auto=format&ixlib=react-8.6.4",
+    "rating": 3,
+    "cost": 400,
+    "start_date": "2019-06-03",
+    "end_date": "2019-06-10",
+    "Length": "1 week",
+    "user": 9
+  }
+},
+{
+  "model": "trips.trip",
+  "pk": 11,
+  "fields": {
+    "country": "Japan",
+    "local_area": "Hakone, Ashigarashimo District",
+    "postcode": "250-0311",
+    "description": "Hakone, in Japan's Fuji-Hakone-Izu National Park west of Tokyo, is a mountainous town known for its hot springs resorts (onsen) and views of the iconic volcano Mount Fuji. It also encompasses Hakone Shrine, a Shinto shrine with a red \u201ctorii\u201d gate overlooking Lake Ashi, which can be toured by boat, as well as the boiling sulphur springs of the Owakudani Valley.",
+    "image": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-540x360/07/83/2c/5b.jpg",
+    "rating": 5,
+    "cost": 3000,
+    "start_date": "2020-08-05",
+    "end_date": "2020-09-02",
+    "Length": "1 month",
+    "user": 9
+  }
+},
+{
+  "model": "trips.trip",
+  "pk": 12,
+  "fields": {
+    "country": "France",
+    "local_area": "Nice",
+    "postcode": "06100",
+    "description": "Nice, capital of the Alpes-Maritimes department on the French Riviera, sits on the pebbly shores of the Baie des Anges. Founded by the Greeks and later a retreat for 19th-century European elite, the city has also long attracted artists. Former resident Henri Matisse is honored with a career-spanning collection of paintings at Mus\u00e9e Matisse. Mus\u00e9e Marc Chagall features some of its namesake's major religious works.",
+    "image": "http://res.cloudinary.com/dkb9vu8mh/image/upload/v1583327690/Travel%20images/t8meapt7aq3ugtdb05p5.jpg",
+    "rating": 3,
+    "cost": 2989,
+    "start_date": "2019-05-14",
+    "end_date": "2019-07-09",
+    "Length": "40 days",
+    "user": 4
+  }
+},
+{
+  "model": "trips.trip",
+  "pk": 13,
+  "fields": {
+    "country": "India",
+    "local_area": "Jaipur",
+    "postcode": "01654",
+    "description": "Jaipur - Jaipur, the capital of the North Indian State of Rajasthan, is named after its founder Maharaja Jai Singh II (1693-1743). The city is surrounded by hills and dotted with forts. Houses with pink latticed windows line the streets and look almost magical at sunset.",
+    "image": "http://res.cloudinary.com/dkb9vu8mh/image/upload/v1583334440/Travel%20images/hjpyr4xtaptcrdddwkdl.jpg",
+    "rating": 4,
+    "cost": 500,
+    "start_date": "2019-04-08",
+    "end_date": "2019-04-28",
+    "Length": "3 weeks",
+    "user": 10
+  }
+},
+{
+  "model": "trips.trip",
+  "pk": 14,
+  "fields": {
+    "country": "Peru",
+    "local_area": "Machu Picchu",
+    "postcode": "23465",
+    "description": "Machu Picchu is an Incan citadel set high in the Andes Mountains in Peru, above the Urubamba River valley. Built in the 15th century and later abandoned, it\u2019s renowned for its sophisticated dry-stone walls that fuse huge blocks without the use of mortar, intriguing buildings that play on astronomical alignments and panoramic views. Its exact former use remains a mystery.",
+    "image": "http://res.cloudinary.com/dkb9vu8mh/image/upload/v1583334600/Travel%20images/wgrtxpoxubiczjkkw6fm.jpg",
+    "rating": 4,
+    "cost": 300,
+    "start_date": "2019-09-13",
+    "end_date": "2019-09-18",
+    "Length": "4 days",
+    "user": 10
+  }
+},
+{
+  "model": "trips.trip",
+  "pk": 15,
+  "fields": {
+    "country": "Isreal",
+    "local_area": "Tel Aviv",
+    "postcode": "88188",
+    "description": "Tel Aviv, a city on Israel\u2019s Mediterranean coast, is marked by stark 1930s Bauhaus buildings, thousands of which are clustered in the White City architectural area. Museums include Beit Hatfutsot, whose multimedia exhibits illustrate the history of Jewish communities worldwide. The Eretz Israel Museum covers the country\u2019s archaeology, folklore and crafts, and features an on-site excavation of 12th-century-B.C. ruins.",
+    "image": "http://res.cloudinary.com/dkb9vu8mh/image/upload/v1583335702/Travel%20images/j2cxffkgmk7pxhzdsqav.jpg",
+    "rating": 4,
+    "cost": 200,
+    "start_date": "2019-10-05",
+    "end_date": "2019-10-17",
+    "Length": "2 weeks",
+    "user": 9
+  }
+},
+{
+  "model": "trips.trip",
+  "pk": 17,
+  "fields": {
+    "country": "USA",
+    "local_area": "New york",
+    "postcode": "781123",
+    "description": "New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. At its core is Manhattan, a densely populated borough that\u2019s among the world\u2019s major commercial, financial and cultural centers. Its iconic sites include skyscrapers such as the Empire State Building and sprawling Central Park. Broadway theater is staged in neon-lit Times Square.",
+    "image": "http://res.cloudinary.com/dkb9vu8mh/image/upload/v1583338918/Travel%20images/ufc3andfl74h5fgd31ji.jpg",
+    "rating": 5,
+    "cost": 300,
+    "start_date": "2019-05-28",
+    "end_date": "2019-06-04",
+    "Length": "1 week",
+    "user": 4
+  }
 }
 ]
