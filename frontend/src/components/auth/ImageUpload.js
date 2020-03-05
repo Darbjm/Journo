@@ -28,15 +28,15 @@ class ImageUpload extends React.Component {
     const labelClass = this.props.labelClassName ? this.props.labelClassName : 'default_class'
     const { image } = this.state
     return (
-      <div className="is-row image-input">
+      <div className='is-row image-input'>
         {image &&    
           <div>
-            <img src={image} alt={image} className="upload-image"/>
+            <img src={image} alt={image} className='upload-image'/>
           </div>}
             <label className={labelClass}>{this.props.labelText}</label>
             <input
               className={this.props.inputClassName}
-              type="file"
+              type='file'
               onChange={this.handleUpload}
             />
         

@@ -35,26 +35,26 @@ class Home extends React.Component {
   render() {
     const { recent } = this.state
     return (
-        <div className="hero-body">
-          <div className="home-section">
-          <section className="search-section">
-          <form onSubmit={this.handleSubmit} className="search-bar">
-            <div className="search">
-              <input type="text" className="search-text" placeholder="Where to?" onChange={this.handleChange} />
-              <button type="submit" className="search-button">
-                <img src="https://image.flaticon.com/icons/svg/942/942196.svg" />
+        <div className='hero-body'>
+          <div className='home-section'>
+          <section className='search-section'>
+          <form onSubmit={this.handleSubmit} className='search-bar'>
+            <div className='search'>
+              <input type='text' className='search-text' placeholder='Where to?' onChange={this.handleChange} />
+              <button type='submit' className='search-button'>
+                <img src='https://image.flaticon.com/icons/svg/942/942196.svg' />
               </button>
             </div>
           </form>
-            <div className="tile is-ancestor">
-              <div className="tile is-vertical">
-                <div className="tile">
-                  <div className="tile centered">
-                    <div className="flex">
+            <div className='tile is-ancestor'>
+              <div className='tile is-vertical'>
+                <div className='tile'>
+                  <div className='tile centered'>
+                    <div className='flex'>
                       {recent && recent.map(trip => (
-                      <Link to={`/showtrip/${trip.id}/`} key={trip.id} className="card">
-                        <img className="tripimage" src={trip.image} alt={trip.image} />
-                        <div className="text-card">
+                      <Link to={`/showtrip/${trip.id}/`} key={trip.id} className='card'>
+                        <img className='tripimage' src={trip.image} alt={trip.image} />
+                        <div className='text-card'>
                           <h1>{trip.country}</h1>
                           <h2>{trip.local_area}</h2>
                           <h3>£{trip.cost}</h3>

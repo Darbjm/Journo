@@ -66,91 +66,91 @@ class EditProfile extends React.Component{
     const { errors, data } = this.state
     if (!data.image) return null
     return (
-      <section className="section hero-login">
-      <div className="center">
-        <form onSubmit={this.handleSubmit} className="column is-6-tablet is-offset-3-tablet is-8-mobile is-offset-2-mobile card">
-          <div className="user-info">
-            <h2 className="title">Edit Profile</h2>
+      <section className='section hero-login'>
+      <div className='center'>
+        <form onSubmit={this.handleSubmit} className='column is-6-tablet is-offset-3-tablet is-8-mobile is-offset-2-mobile card'>
+          <div className='user-info'>
+            <h2 className='title'>Edit Profile</h2>
             <br />
-            <div className="fieldContainer">
-              <div className="field">
-                <label className="label">USERNAME</label>
-                <div className="control">
+            <div className='fieldContainer'>
+              <div className='field'>
+                <label className='label'>USERNAME</label>
+                <div className='control'>
                   <input
                     className={`input is-rounded ${errors.username ? 'is-danger' : ''}`}
-                    placeholder="Username"
-                    name="username"
+                    placeholder='Username'
+                    name='username'
                     onChange={this.handleChange}
                     value={data.username}
                   />
                 </div>
-                {errors.name && <small className="help is-danger">{errors.username}</small>}
+                {errors.name && <small className='help is-danger'>{errors.username}</small>}
               </div>
-              <div className="field">
-                <label className="label">EMAIL</label>
-                <div className="control">
+              <div className='field'>
+                <label className='label'>EMAIL</label>
+                <div className='control'>
                   <input
                     className={`input is-rounded ${errors.email ? 'is-danger' : ''}`}
-                    placeholder="Email"
-                    name="email"
+                    placeholder='Email'
+                    name='email'
                     onChange={this.handleChange}
                     value={data.email}
                   />
                 </div>
-                {errors.email && <small className="help is-danger">{errors.email}</small>}
+                {errors.email && <small className='help is-danger'>{errors.email}</small>}
               </div>
-              <div className="field">
-                <label className="label">PASSWORD</label>
-                <div className="control">
+              <div className='field'>
+                <label className='label'>PASSWORD</label>
+                <div className='control'>
                   <input
                     className={`input is-rounded ${errors.password ? 'is-danger' : ''}`}
-                    type="password"
-                    placeholder="Password"
-                    name="password"
+                    type='password'
+                    placeholder='Password'
+                    name='password'
                     onChange={this.handleChange}
                   />
                 </div>
-                {errors.password && <small className="help is-danger">{errors.password}</small>}
+                {errors.password && <small className='help is-danger'>{errors.password}</small>}
               </div>
-              <div className="field">
-                <label className="label">PASSWORD CONFIRMATION</label>
-                <div className="control">
+              <div className='field'>
+                <label className='label'>PASSWORD CONFIRMATION</label>
+                <div className='control'>
                   <input
                     className={`input is-rounded ${errors.password_confirmation ? 'is-danger' : ''}`}
-                    type="password"
-                    placeholder="Password Confirmation"
-                    name="password_confirmation"
+                    type='password'
+                    placeholder='Password Confirmation'
+                    name='password_confirmation'
                     onChange={this.handleChange}
                   />
                 </div>
-                {errors.password_confirmation && <small className="help is-danger">{errors.password_confirmation}</small>}
+                {errors.password_confirmation && <small className='help is-danger'>{errors.password_confirmation}</small>}
               </div>
-              <div className="field">
-                <label className="label">Bio</label>
-                <div className="control">
+              <div className='field'>
+                <label className='label'>Bio</label>
+                <div className='control'>
                   <input
                     className={`input is-rounded ${errors.bio ? 'is-danger' : ''}`}
-                    placeholder="Bio"
-                    name="bio"
+                    placeholder='Bio'
+                    name='bio'
                     value={data.bio}
                     onChange={this.handleChange}
                   />
                 </div>
-                {errors.bio && <small className="help is-danger">{errors.bio}</small>}
+                {errors.bio && <small className='help is-danger'>{errors.bio}</small>}
               </div>
             </div>    
           </div>
-          <div className="user-image">
+          <div className='user-image'>
             <ImageUpload
               handleChange={this.handleChange}
-              fieldName="image"
-              inputClassName="is-row"
+              fieldName='image'
+              inputClassName='is-row'
               value={data.image}
             />
             <hr />
-            <div className="is-row">
-            <button type="submit" className="button is-rounded color">SAVE</button>
-            <button onClick={this.delete} className="button is-rounded is-danger">DELETE</button>
+            <div className='is-row'>
+            <button type='submit' className='button is-rounded color'>SAVE</button>
+            <button onClick={this.delete} className='button is-rounded is-danger'>DELETE</button>
             </div>
           </div>
         </form>

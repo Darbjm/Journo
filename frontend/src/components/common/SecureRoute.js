@@ -5,7 +5,7 @@ import Auth from '../../lib/auth'
 const SecureRoute = ({ component: Component, ...rest }) => {
   if (Auth.isAuthenticated()) return <Route {...rest} component={Component}/>
   Auth.logout()
-  return <Redirect to="/login"/>
+  return <Redirect to='/login'/>
 }
 
 export default SecureRoute

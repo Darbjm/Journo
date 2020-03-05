@@ -24,17 +24,17 @@ function App() {
     <>
       <Navbar/>
       <Switch>
-      <SecureRoute path="/profile/:id/edit" component={EditProfile} />
-      <SecureRoute path="/showtrip/:id/edit" component={EditTrip} />
-      <SecureRoute path="/profile" component={UserProfile}/>
-      <SecureRoute path="/showuser/:id" component={ShowUser} />
-      <Route path="/login" component={Login}/>
-      <Route path="/register" component={Register}/>
+      <SecureRoute path='/profile/:id/edit' component={EditProfile} />
+      <SecureRoute path='/showtrip/:id/edit' component={EditTrip} />
+      <SecureRoute path='/profile' component={UserProfile}/>
+      <SecureRoute path='/showuser/:id' component={ShowUser} />
+      <Route path='/login' component={Login}/>
+      <Route path='/register' component={Register}/>
       <Route path='/home' component={Home} />
       <Route path='/map/:place' component={TripMap} />
-      <SecureRoute path="/createtrip" component={CreateTrip}/>
-      <SecureRoute path="/showtrip/:id" component={ShowTrip}/>
-      <Route path="/*" component={FailedPage} />
+      <SecureRoute path='/createtrip' component={CreateTrip}/>
+      <SecureRoute path='/showtrip/:id' component={ShowTrip}/>
+      <Route path='/*' component={FailedPage} />
       </Switch>
     </>
   </BrowserRouter>

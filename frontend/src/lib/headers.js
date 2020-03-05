@@ -5,5 +5,5 @@ export const headers = {
   common: {
     'X-CSRF-TOKEN': csrftoken
   },
-  headers: { Authorization: `Bearer ${getToken()}` }
+  // headers: { Authorization: `Bearer ${getToken()}` }
 }
