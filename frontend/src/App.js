@@ -24,13 +24,13 @@ function App() {
     <>
       <Navbar/>
       <Switch>
+      <Route exact path='/' component={Home} />
       <SecureRoute path='/profile/:id/edit' component={EditProfile} />
       <SecureRoute path='/showtrip/:id/edit' component={EditTrip} />
       <SecureRoute path='/profile' component={UserProfile}/>
       <SecureRoute path='/showuser/:id' component={ShowUser} />
       <Route path='/login' component={Login}/>
       <Route path='/register' component={Register}/>
-      <Route path='/home' component={Home} />
       <Route path='/map/:place' component={TripMap} />
       <SecureRoute path='/createtrip' component={CreateTrip}/>
       <SecureRoute path='/showtrip/:id' component={ShowTrip}/>
