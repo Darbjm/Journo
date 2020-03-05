@@ -24,7 +24,7 @@ function App() {
     <>
       <Navbar/>
       <Switch>
-      <Route path='/' component={Home} />
+      <Route exact path='/' component={Home} />
       <SecureRoute path='/profile/:id/edit' component={EditProfile} />
       <SecureRoute path='/showtrip/:id/edit' component={EditTrip} />
       <SecureRoute path='/profile' component={UserProfile}/>
