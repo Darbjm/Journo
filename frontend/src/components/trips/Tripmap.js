@@ -17,7 +17,7 @@ export default function TripMap() {
 
   const getData = async () => {
         try {
-          const token = 'pk.eyJ1IjoiZGFyYmptIiwiYSI6ImNrNWk5MDFwMjA5NmozZW5weWUyb21xa3YifQ.iJv7D-hvXJ2Tw4p2AiQMtQ'
+          const token = process.env.REACT_APP_MAPBOX_KEY
           const search = window.location.pathname.split('/').slice(2).join('/')
           const mapStartFocus = await axios.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/${search}.json?access_token=${token}`)
           if (mapStartFocus.data.features.length === 0) {
@@ -55,7 +55,7 @@ export default function TripMap() {
       <ReactMapGL
       {...viewport}
       mapStyle='mapbox://styles/mapbox/streets-v9' 
-      mapboxApiAccessToken={'pk.eyJ1IjoiZGFyYmptIiwiYSI6ImNrNWk5MDFwMjA5NmozZW5weWUyb21xa3YifQ.iJv7D-hvXJ2Tw4p2AiQMtQ'}
+      mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_KEY}
       height={'100vh'}
       width={'100vw'}
       onViewportChange={viewport => {
