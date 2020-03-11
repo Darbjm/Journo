@@ -147,7 +147,6 @@ class EditProfile extends React.Component{
               inputClassName='is-row'
               value={data.image}
             />
-            <hr />
             <div className='is-row'>
             <button type='submit' className='button is-rounded color'>SAVE</button>
             <button onClick={this.delete} className='button is-rounded is-danger'>DELETE</button>
