@@ -62,8 +62,6 @@ export default function TripMap() {
         setViewport(viewport)
       }}
       >
-        <br/>
-        <h2 className='title'>MAP CREATED WITH HOOKS</h2>
         {trips[0] && trips.map((trip, i) => (
           <Marker 
             key={i}
