@@ -5,7 +5,28 @@ import { Link } from 'react-router-dom'
 class Home extends React.Component {
   state = {
     search: '',
-    recent: []
+    recent: [],
+    width: 0,
+    height: 0
+  }
+
+  constructor(props) {
+    super(props)
+    this.state = { width: 0, height: 0 }
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this)
+  }
+  
+  componentDidMount() {
+    this.updateWindowDimensions()
+    window.addEventListener('resize', this.updateWindowDimensions)
+  }
+  
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions)
+  }
+  
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight })
   }
 
   handleChange = e => {
@@ -33,7 +54,7 @@ class Home extends React.Component {
   }
 
   render() {
-    const { recent } = this.state
+    const { recent, width } = this.state
     return (
         <div className='hero-body'>
           <div className='home-section'>
@@ -51,7 +72,8 @@ class Home extends React.Component {
                 <div className='tile'>
                   <div className='tile centered'>
                     <div className='flex'>
-                      {recent && recent.map(trip => (
+                    {width > 768 ? 
+                      (recent && recent.map(trip => (
                       <Link to={`/showtrip/${trip.id}/`} key={trip.id} className='card'>
                         <img className='tripimage' src={trip.image} alt={trip.image} />
                         <div className='text-card'>
@@ -60,7 +82,17 @@ class Home extends React.Component {
                           <h3>£{trip.cost}</h3>
                           <h4>Rating: {trip.rating} ★</h4>
                         </div>
-                      </Link>))}
+                      </Link>)))
+                      :
+                      recent && <Link to={`/showtrip/${recent[0].id}/`} key={recent[0].id} className='card'>
+                      <img className='recent[0]image' src={recent[0].image} alt={recent[0].image} />
+                      <div className='text-card'>
+                        <h1>{recent[0].country}</h1>
+                        <h2>{recent[0].local_area}</h2>
+                        <h3>£{recent[0].cost}</h3>
+                        <h4>Rating: {recent[0].rating} ★</h4>
+                      </div>
+                    </Link>}
                     </div>
                   </div>
                 </div>

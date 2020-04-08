@@ -152,11 +152,10 @@ $turq: rgb(25, 162, 180);
 }
 
 
-
 .hero-body {
   background-image: url("../assets/derek-thomson-TWoL-QCZubY-unsplash.jpg");
   background-size: cover;
-  height: 91vh;
+  height: 100vh;
 }
 
 .hero-body-failed {
@@ -228,23 +227,28 @@ $turq: rgb(25, 162, 180);
   }
 }
 
+.white {
+  background-color: white !important;
+}
+
 nav.nav {
+  .navbar-burger {
+    margin: 13px 10px 0 0 ;
+  }
   background-color: $turq;
   .container {
-    margin-left: 20px;
-    display: flex;
-    flex-direction: row;
-
 
     .navbar-brand {
-      margin-right: 20px;
-
+      justify-content: space-between;
       img {
-        margin-top: 10px;
+        margin: 10px 0 0 10px;
         width: 60px;
         height: 55px;
       }
     }
+  .turq {
+    background-color: $turq;
+  }
   }
 }
 
