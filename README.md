@@ -191,8 +191,23 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 <h2 name='blockers'>Blockers</h2>
-<h3></h3>
+<h3>Form feedback</h3>
+I did this project on my own because I wanted to go over the parts of building a web app I had missed while in my group project. I was happy to discover that I needed to do this as I really struggled with the form feedback errors. I learned that you can add the property 'name' to the input and then use this in state to update the errors section just the same as anything else. I had forgotton that errors were sent back and could be used.
 
+```javascript
+  handleChange = e => {
+    const data = { ...this.state.data, [e.target.name]: e.target.value }
+    const errors = { ...this.state.errors, [e.target.name]: '' }
+    this.setState({ data, errors })
+  }
+```
+<br>
+<br>
+<br>
+<img src='readme/Formfeedback.png' width='600'>
+<br>
+<br>
+<br>
 <h2 name='bugs'>Bugs</h2>
 <h3>Reload page</h3>
 Unfortunately a major bug of the app seems to be it is unable to refresh or reload the page you are on. If you do it seems to try and look in the back-end for the address. If this happens you must start from the home address.<br>
@@ -206,7 +221,7 @@ Unfortunately a major bug of the app seems to be it is unable to refresh or relo
 The create trip and edit trip pages have a small issue of the form taking up too much space to fit on the page nicely.<br>
 <br>
 <br>
-<img src='readme/SCSSBugpng' width='600'>
+<img src='readme/SCSSBug.png' width='600'>
 <br>
 <br>
 <br>
