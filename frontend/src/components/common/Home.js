@@ -16,11 +16,6 @@ class Home extends React.Component {
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this)
   }
   
-  componentDidMount() {
-    this.updateWindowDimensions()
-    window.addEventListener('resize', this.updateWindowDimensions)
-  }
-  
   componentWillUnmount() {
     window.removeEventListener('resize', this.updateWindowDimensions)
   }
@@ -34,6 +29,8 @@ class Home extends React.Component {
   }
 
   componentDidMount = async () => {
+    this.updateWindowDimensions()
+    window.addEventListener('resize', this.updateWindowDimensions)
     try {
       const res = await axios.get('api/trips/')
       const array = res.data
@@ -55,6 +52,7 @@ class Home extends React.Component {
 
   render() {
     const { recent, width } = this.state
+    console.log(this.state.width)
     return (
         <div className='hero-body'>
           <div className='home-section'>
