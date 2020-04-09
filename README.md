@@ -190,97 +190,25 @@ class UserSerializer(serializers.ModelSerializer):
 ```
 
 
-```javascript
-function destroy(req, res) {
-  User
-    .findById(req.params.id)
-    .then(user => {
-      if (!user.equals(req.currentUser._id)) return res.status(401).json({ message: 'Unauthorized' }) //This line was deleted when merged
-      if (!user) return res.status(404).json({ message: 'Not Found ' })
-      user.remove().then(() => res.sendStatus(204))
-    })
-    .catch(err => res.json(err))
-}
-```
-<br>
-<br>
-<br>
-<img src='src/readme/Testing.png' width='600'>
-<br>
-<br>
-<h3>Teamwork</h3>
-Although we had issues with git and merging our team worked seamlessly, using trello we democratically divided the tasks and worked quickly and enjoyably together. Helping each other was useful for the team and the individuals doing the help as we all learned from each other and put parts of ourselves into the app. Producing something we were all proud of.<br>
-<br>
-<br>
-<img src='src/readme/Trello.png' width='600'>
-<br>
-<br>
-<h3>Promise.all()</h3>
-The whole Mapbox feature was a win for me as I had previously tried in another project to implement markers with pop-ups and failed. A few smaller wins were things such as the user is able to search any area on the home screen and the map would load it, and handling the viewport change, meaning the user could move the map with the mouse. However one really great win for me was learning about the Promise.all() function. Because it is synchronous it allowed me to get the latitude and longitude of each user with the geocoder api in order. Because the Promise waits for each user in the map function to be finished before it starts on the next one, it meant I could setState the user and their coordinates at the same time and not have to worry about the wrong coordinates being attatched to the wrong user.<br>
-<br>
-<br>
-<img src='src/readme/MapboxPromise.png' width='600'>
-<br>
-<br>
-<h3>Offers pending</h3>
-The offers page was another big win. When the user sends an offer I had to attach the user sending the offer in the back-end with the following code:
-
-```javascript
-function offersPendingCreate(req, res) {
-  User
-    .findById(req.params.id)
-    .then(user => {
-      if (!user) return res.status(404).json({ message: 'Not Found' })
-      if (user.equals(req.currentUser._id)) return res.status(401).json({ message: 'Unauthorized' })
-      user.offersPending.push({ offeringUser: req.currentUser }) // attaches offering user
-      return user.save()
-    })
-    .then(user => res.status(201).json(user))
-    .catch(err => res.json(err))
-}
-```
-
-I had to do this because the object has its own ID and therefore could not see how I could use the populate function. I again turned to the Promise.all() function to allow each GET request to return and therefore setState with all the offers in one array.<br>
-<br>
-<br>
-<img src='src/readme/FindOffersPromise.png' width='600'><br>
-<br>
-<br>
-<h3>User email</h3>
-I wanted the collaborate button on another users page to change according to if the user had not sent a request, had sent a request and finally if that request had been sent. In the begining this proved tricky but I actually found that like many things I had learned in code, it was deceptively simple and used a ternary statement inside a ternary statement and then just had to find if the current user was inside the offersPending or offersAccepted array:<br>
-<br>
-<br>
-<img src='src/readme/UserShow.png' width='600'>
-<img src='src/readme/UserShowOfferPending.png' width='600'>
-<br>
-<br>
 <h2 name='blockers'>Blockers</h2>
-<h3>Merging</h3>
-Using the merge and branch method with git was an interesting new way of working in a group. I can see the benefits and will be happy to work with it in the future. However this particular project it caused a lot of issues and wasted time trying to fix things that were being broken after each merge. I assume one or all of us were using it incorrectly but the random lines of code being deleted all through the app was a big problem in this project.
-<br>
-<br>
-<h3>Offers</h3>
-Although the offers feature was a win for me getting there was difficult. It took me half a day to understand how I could delete an offer. I was struggling to delete the offer because I could not find a unique ID in the offer by which to identify and remove it. I eventually discovered I could attach it to the request but because the acceptedUser and offereyid were different objects in memory I could only use the equality operator rather than the strict equality operator.
-<br>
-<br>
-<img src='src/readme/Backend issue.png' width='600'>
-<br>
-<br>
+<h3></h3>
+
 <h2 name='bugs'>Bugs</h2>
-<h3>Passwords</h3>
-Unfortunately we did not include a way to make sure that the user had to create a secure password that was at least 8 characters long and contained uppercase and lowercase letters and numbers.
+<h3>Reload page</h3>
+Unfortunately a major bug of the app seems to be it is unable to refresh or reload the page you are on. If you do it seems to try and look in the back-end for the address. If this happens you must start from the home address.<br>
 <br>
 <br>
-<h3>Edit profile</h3>
-The users image does not load for the edit page as we were focusing on finishing the app and did not donate enough time to figureing out how were could uses the profile image as an upload button that would change.
+<img src='readme/Reload.png' width='600'>
 <br>
-<br>
-<img src='src/readme/Editprofile.png' width='600'>
 <br>
 <br>
 <h3>SCSS</h3>
-The styling also has sections that are glitchy and ugly. It is not very responsive however we proritised the time we had on functionality and features.
+The create trip and edit trip pages have a small issue of the form taking up too much space to fit on the page nicely.<br>
+<br>
+<br>
+<img src='readme/SCSSBugpng' width='600'>
+<br>
+<br>
+<br>
 <h2 name='learn'>Future learnings</h2>
-• Learn about refs<br>
-• Include password security features<br>
-• Get a better understanding of objects in memory and equality operators<br>
+• Look into the reload bug and how this works<br>
