@@ -52,7 +52,6 @@ class Home extends React.Component {
 
   render() {
     const { recent, width } = this.state
-    console.log(this.state.width)
     return (
         <div className='hero-body'>
           <div className='home-section'>
