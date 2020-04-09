@@ -28,7 +28,6 @@ class UserProfile extends React.Component {
   render() {
     const { user, trips } = this.state
     if (!user) return null
-    console.log(user)
     return (
       <section className='section hero-profile'>
         <div className='profile-fit'>
@@ -38,8 +37,8 @@ class UserProfile extends React.Component {
               <img className='user-profileimage' src={user.image} alt={user.image} />
               <div className='tile end'>
                 <div className='flex'>
-                {trips && trips.map(trip => (
-                <Link to={`/showtrip/${trip.id}/`} key={trip.id} className='card'>
+                {trips[0] && trips.map((trip, i) => (
+                <Link to={`/showtrip/${trip.id}/`} key={i} className='card'>
                 <img className='tripimage' src={trip.image} alt={trip.image} />
                 <div className='text-card'>
                 <h1>{trip.country}</h1>

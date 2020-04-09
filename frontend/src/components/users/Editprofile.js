@@ -23,6 +23,7 @@ class EditProfile extends React.Component{
       await axios.delete(`http://localhost:8000/api/users/edit/${id}`, {
         headers: { Authorization: `Bearer ${Auth.getToken()}` }
       })
+      Auth.logout()
       this.props.history.push('/')
     } catch (err) {
       console.log(err)
