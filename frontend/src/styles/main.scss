@@ -37,7 +37,6 @@ $turq: rgb(25, 162, 180);
       flex-direction: column;
       justify-content: space-evenly;
       text-align: center;
-      // padding: 10px;
     }
   }
 }
@@ -163,7 +162,7 @@ $turq: rgb(25, 162, 180);
   background-size: cover;
   display: flex;
   align-items: center;
-  height: 91vh;
+  height: 100vh;
   .container {
     background: rgba(255, 255, 255, 0.5);
     height: 100px;
@@ -199,7 +198,7 @@ $turq: rgb(25, 162, 180);
 .hero-profile{
   background-image: url("../assets/simon-migaj-Yui5vfKHuzs-unsplash.jpg");
   background-size: cover;
-  height: 91vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -216,7 +215,7 @@ $turq: rgb(25, 162, 180);
 .hero-login {
   background-image: url("../assets/chuttersnap-9AzUka-0gTg-unsplash.jpg");
   background-size: cover;
-  height: 91vh;
+  height: 100vh;
   .center {
     display: flex;
     align-items: center;
