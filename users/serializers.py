@@ -25,7 +25,7 @@ class UserSerializer(serializers.ModelSerializer):
     try:
       validations.validate_password(password=password)
     except ValidationError as Err:
-      raise serializers.ValidationError({'password_confirmation': 'err.messages'})
+      raise serializers.ValidationError({'password': 'Password must be 8 characters long and contain a letter'})
 
     data['password'] = make_password(password)
 
