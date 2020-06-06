@@ -9,7 +9,6 @@ class ImageUpload extends React.Component {
 
   async componentDidMount() {
     const image = this.props.value
-    console.log(this.props)
     this.setState({ image })
   }
 
@@ -20,7 +19,6 @@ class ImageUpload extends React.Component {
     const res = await axios.post('https://api.cloudinary.com/v1_1/dkb9vu8mh/image/upload', data)
     this.setState({ image: res.data.url }, () => {
       this.props.handleChange({ target: { name: this.props.fieldName, value: res.data.url } })
-      console.log(this.props)
     })
   }
 

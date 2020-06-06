@@ -60,7 +60,7 @@ class Home extends React.Component {
             <div className='search'>
               <input type='text' className='search-text' placeholder='Where to?' onChange={this.handleChange} />
               <button type='submit' className='search-button'>
-                <img src='https://image.flaticon.com/icons/svg/942/942196.svg' />
+                <img src='https://image.flaticon.com/icons/svg/942/942196.svg' alt='flaticon'/>
               </button>
             </div>
           </form>
